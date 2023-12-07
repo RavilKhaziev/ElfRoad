@@ -197,6 +197,7 @@ public class PlayerMovementScript : MonoBehaviour {
                 float dx = target.x - current.x;
                 float dz = target.z - current.z;
                 if (dz > 0)
+                    
                     return "north";
                 else if (dz < 0)
                     return "south";
@@ -213,6 +214,8 @@ public class PlayerMovementScript : MonoBehaviour {
     public void GameOver() {
         // When game over, disable moving.
         canMove = false;
+
+
 
         // Call GameOver at game state controller (instead of sending messages).
         gameStateController.GameOver();

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
     public Transform mainMenu, optionMenu, characterMenu, rankingMenu;
@@ -12,6 +13,21 @@ public class LevelManager : MonoBehaviour {
 
     public string username;
 
+    Scene PlayScene;
+
+    public void Start() 
+    {
+        var music = MusicControl.Instance();
+        if (music.AudioSource == null)
+        {
+            DontDestroyOnLoad(audio);
+            audio.loop = true;
+            music.AudioSource = audio;
+        }
+        music.PlayBackgroundSound();
+        
+    }
+
     public void NameClarify() {
         //userInputField.text = "Enter PlayerName Here...";
         username = userInputField.text.ToString();
@@ -21,8 +37,9 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void LoadScene(string name) {
-        DontDestroyOnLoad(audio);
-        Application.LoadLevel(name);
+        
+        SceneManager.LoadScene(name);
+
     }
 
     public void QuitGame()  {
