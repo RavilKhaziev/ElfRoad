@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
@@ -13,19 +15,17 @@ public class LevelManager : MonoBehaviour {
 
     public string username;
 
-    Scene PlayScene;
-
     public void Start() 
     {
-        var music = MusicControl.Instance();
-        if (music.AudioSource == null)
-        {
-            DontDestroyOnLoad(audio);
-            audio.loop = true;
-            music.AudioSource = audio;
-        }
-        music.PlayBackgroundSound();
+        print("Start LevelManager");
         
+        var _musicControl = MusicControl.Instance();
+
+        if (_musicControl.GetMusic() == null)
+        {
+            _musicControl.SetMusic(audio);
+        }
+        _musicControl.PlayBackgroundSound();
     }
 
     public void NameClarify() {
@@ -37,9 +37,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void LoadScene(string name) {
-        
-        SceneManager.LoadScene(name);
-
+        Application.LoadLevel(name);
     }
 
     public void QuitGame()  {
