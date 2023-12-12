@@ -1,60 +1,64 @@
-# Crossy Road EX
-ffffff
-**Crossy Road EX** is an implementation of the classic game [*Crossy Road*](https://play.google.com/store/apps/details?id=com.yodo1.crossyroad&hl=en_US) built in [Unity](https://unity3d.com/). *Crossy Road* is an arcade video game released on 20 November 2014. It was developed and published by Hipster Whale, with the name and concept of the game playing on the joke "Why did the chicken cross the road?" The game has been described as "endless Frogger."
+<h1 align="center">🎄🎄🎄 ElfRoad 🎄🎄🎄</h1> 
 
-> More information about [Unity](https://unity3d.com/)
+Совместный проект, представляющий собой игру ElfRoad (по мотивам игры CrossyRoad).
+## Выполняли проект: 👥
 
-* [How to install Unity IDE?](https://store.unity.com/?_ga=2.265725839.1060669429.1552211594-647567507.1552211594)
+**Руководитель по проекту:** 
+|---|
+Максимов Максим
 
----
-## Execution
+**Ответственные за дизайн и разработку 3D моделей:** 
+|---|
+Исмагилов Рузель
+Омороков Дмитрий
 
-> **NOTICE:** Make sure you have already installed Unity on your machine.
+**Ответственные за разработку кода:** 
+|---|
+Хазиев Равиль
+Фаттахов Денис
+Нигмадзянов Найль
+Тимофеев Денис
 
-1. Open this repository in your Unity IDE first
-2. Execution in the Unity IDE
-    * If succed, you will see the picture as follow
-        * Click "Play" to start the game
-        ![](https://i.imgur.com/qUA6SBl.png)
-    * In "Option", you will see some settings as follow
-        ![](https://i.imgur.com/1hPeKYo.png)
-    * In "Play", you will see the picture as follow. Click any key to play!
-        ![](https://i.imgur.com/GjkTKQs.png)
-        ![](https://i.imgur.com/KeyPr5u.png)
-    * Game over
-        ![](https://i.imgur.com/X18eExN.png)
+ **Ответственные за презентацию и работу с документацией:**
+|---|
+Иванов Юрий
+Муллагулов Альбурт
 
-### Run with execution file
+## Цель работы: 🏆
+Создать 3D игру в Unity, основанную на игре CrossyRoad.
 
-We have already built the execution for Windows and Ubuntu Linux. You can also run the execution file respectively in the folder [`Main/`](Main/).
+## Используемые библиотеки и язык прогромирования: 📚
 
-```
-Main/
-|--- Ubuntu/
-    |--- CrossyRoadEX_Data/
-    |--- CrossyRoadEX.x86_64        # Click this file to run the game!
-|--- Windows/
-    |--- CrossyRoadEX_Data/
-    |--- MonoBleedingEdge/
-    |--- CrossyRoadEX.exe
-    |--- UnityCrashJandler64.exe    # Click this file to run the game!
-    |--- UnityPlayer.dll
-    |--- WinPixEventRuntime.dll
-```
+### Язык программирования выбран: 
+ - C#
 
----
-## Logs
+### Используемые инструменты: 
+- ***MagicalVoxel*** - это приложения для создания воксельной графики. Ней были созданы 3D модели для нашей игры.
 
-* MAR 11, 2019 - Build and test on [Unity 2018.3.8f1 (64-bit)](https://unity3d.com/get-unity/download/archive)
+- ***Unity*** - это кроссплатформенная среда разработки компьютерных игр. В ней была создана сама игра.
+  
+- ***Microsoft Visual Studio*** - среда разработки. В ней были разработаны все скрипты.
 
----
-## Author
+## Описание скриптов ✏
+1. `GameStateControllerScript` - Этот код представляет собой скрипт для управления состоянием игры.;
 
-> **NOTICE:** You can follow the contributing process [CONTRIBUTING.md](CONTRIBUTING.md) to join me. I am very welcome any issue!
+2. `GenericGridObjectGeneratorScript` - Этот скрипт генерирует объекты в виде сетки в заданных пределах и с определенной плотностью;
 
-* [David Lu](https://github.com/yungshenglu)
+3. `CameraMovementScript` - Этот код отвечает за движение камеры в игре. Он использует компонент PlayerMovementScript, чтобы получить информацию о движении игрока и соответствующим образом перемещать камеру;
 
----
-## License
+4. `CarScript` - Этот код отвечает за движение машины в игре;
 
-[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
+5. `LevelControllerScript` - Этот скрипт управляет генерацией и удалением игровых линий в зависимости от позиции игрока;
+
+6. `LevelManager` - этот скрипт отвечает за работу с главным меню;
+
+7. `PlayerMovementScript` - Этот скрипт отвечает за движение игрока.
+
+8. `TrunkFloatingScript, TrunkGeneratorScript, WaterSplashScript` - Это скрипты отвечают за анимацию плавающих подарков, а так же генерацию этих подарков и воды.
+
+
+## Презентация 📊
+
+Ссылка на презентацию: https://docs.google.com/presentation/d/1IHmwRQLYwNJoE1RBDWC_2ctCGPGHO9Tn/edit?usp=sharing&ouid=110551178293038687350&rtpof=true&sd=true
+
+
