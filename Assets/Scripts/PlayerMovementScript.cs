@@ -35,7 +35,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
         body = GetComponentInChildren<Rigidbody>();
 
-        mesh = GameObject.Find("Player/Chicken");
+        mesh = GameObject.Find("Player/elf");
 
         score = 0;
         gameStateController = GameObject.Find("GameStateController").GetComponent<GameStateControllerScript>();
@@ -93,18 +93,18 @@ public class PlayerMovementScript : MonoBehaviour {
 		}
 		
         if (Input.GetKeyDown(KeyCode.W)) {
-            Move(new Vector3(0, 0, 1));
+            Move(new Vector3(0, 0, 3));
         }
         else if (Input.GetKeyDown(KeyCode.S)) {
-            Move(new Vector3(0, 0, -1));
+            Move(new Vector3(0, 0, -3));
         }
         else if (Input.GetKeyDown(KeyCode.A)) {
             if (Mathf.RoundToInt(current.x) > minX)
-                Move(new Vector3(-1, 0, 0));
+                Move(new Vector3(-3, 0, 0));
         }
         else if (Input.GetKeyDown(KeyCode.D)) {
             if (Mathf.RoundToInt(current.x) < maxX)
-                Move(new Vector3(1, 0, 0));
+                Move(new Vector3(3, 0, 0));
         }
     }
 
@@ -124,29 +124,31 @@ public class PlayerMovementScript : MonoBehaviour {
 
         switch (MoveDirection) {
             case "north":
-                mesh.transform.rotation = Quaternion.Euler(0, 0, 0);
+                mesh.transform.rotation = Quaternion.Euler(0, -90, 0);
                 break;
             case "south":
-                mesh.transform.rotation = Quaternion.Euler(0, 180, 0);
+                mesh.transform.rotation = Quaternion.Euler(0, 90, 0);
                 break;
             case "east":
-                mesh.transform.rotation = Quaternion.Euler(0, 270, 0);
+                mesh.transform.rotation = Quaternion.Euler(0, 180, 0);
                 break;
             case "west":
-                mesh.transform.rotation = Quaternion.Euler(0, 90, 0);
+                mesh.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             default:
                 break;
         }
 
         // Rotate arm and leg.
-        foreach (var o in leftSide) {
-            o.transform.Rotate(leftRotation, 0, 0);
-        }
+        //foreach (var o in leftSide) {
+        //    // o.transform.Rotate(leftRotation, 0, 0);
+        //}
 
-        foreach (var o in rightSide) {
-            o.transform.Rotate(rightRotation, 0, 0);
-        }
+        //transform.rotation.SetEulerRotation(Vector3.left);
+
+        //foreach (var o in rightSide) {
+        //    o.transform.Rotate(rightRotation, 0, 0);
+        //}
     }
 
     private void MovePlayer() {
@@ -197,6 +199,7 @@ public class PlayerMovementScript : MonoBehaviour {
                 float dx = target.x - current.x;
                 float dz = target.z - current.z;
                 if (dz > 0)
+                    
                     return "north";
                 else if (dz < 0)
                     return "south";
@@ -213,6 +216,8 @@ public class PlayerMovementScript : MonoBehaviour {
     public void GameOver() {
         // When game over, disable moving.
         canMove = false;
+
+
 
         // Call GameOver at game state controller (instead of sending messages).
         gameStateController.GameOver();
