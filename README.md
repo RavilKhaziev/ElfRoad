@@ -59,6 +59,6 @@
 
 ## Презентация 📊
 
-Ссылка на презентацию: https://docs.google.com/presentation/d/1IHmwRQLYwNJoE1RBDWC_2ctCGPGHO9Tn/edit?usp=sharing&ouid=110551178293038687350&rtpof=true&sd=true
+Ссылка на презентацию: https://docs.google.com/presentation/d/1kmysFQ9CbbvZD3pUDGO196I5AyQHZ6Am/edit?usp=sharing&ouid=110551178293038687350&rtpof=true&sd=true
 
 
